@@ -1,0 +1,22 @@
+{% extends 'inicio/encabezado.html' %} {% block titulo %} PRINCIPAL {% endblock %} {% load static %} {% block contenido %}
+
+
+
+
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <video src="{% static 'videos/lavado1.mp4'%}" width="1500" autoplay muted type="video"></video>
+            <div class="carousel-caption d-none d-md-block" style="margin-bottom:700px; font-size: 45px;">
+                <h1>Auto Lavado</h1>
+                <p>CarWash</p>
+            </div>
+            <div class="carousel-caption d-none d-md-block" style="margin-bottom: 400px;">
+                <p>Servicio de Limpieza y mecanica</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    {%endblock%}

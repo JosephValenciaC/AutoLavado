@@ -1,0 +1,25 @@
+{% extends 'inicio/encabezado.html' %} {% block titulo %} Eliminacion {% endblock %} {% load static %}
+
+
+
+<!-- Contendio -->
+{% block contenido %}
+
+
+<div class="card card-body" style="margin-top: 100px; margin-left: 300px; margin-right:300px ;">
+    <form method="POST">
+        {% csrf_token %}
+
+        <div class="">
+            <h4>¿Esta seguro de eliminar el medicamento?</h4>
+            <p>
+                <button type="submit" class="btn btn-danger">Si, Eliminar</button>
+                <a href="{% url 'Registro' %}" class="btn btn-primary">Cancelar</a>
+            </p>
+        </div>
+    </form>
+
+</div>
+
+<!-- Fin del contenido -->
+{% endblock %}

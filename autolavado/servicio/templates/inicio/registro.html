@@ -1,0 +1,49 @@
+{% extends 'inicio/encabezado.html' %} {% block titulo %} Servicios {% endblock %} {% load static %} {% block contenido %}
+
+
+
+<br> <br> <br>
+<div class="card text-bg-dark m-4 pt-5">
+    <div class="card-header">
+        <h3 class="text-center text-white">Servicios</h3>
+    </div>
+    <table class="table m-1 text-center">
+        <thead style="color:#fff ;">
+            <tr>
+                <td>Clave</td>
+
+                <td>Nombre del Ciente</td>
+                <td>Costo $</td>
+                <td>Tipo de Servicio</td>
+                <td>Fecha del Servicio</td>
+                <td>Imagen</td>
+                <td></td>
+                <td></td>
+
+            </tr>
+        </thead>
+        <tbody style="color:#fff ;">
+            {% for servicio in servicios %}
+            <tr>
+                <td>{{servicio.clave}}</td>
+                <td>{{servicio.nombreCliente}}</td>
+                <td>{{servicio.costo}}</td>
+                <td>{{servicio.TipServ}}</td>
+                <td>{{servicio.FechaSer}}</td>
+                <td><img src="{{servicio.imagen.url}}" width="150"></td>
+                <td>
+                    <a class="btn btn-outline-light" href="{% url 'Consultar' servicio.id %}">Editar</a>
+                </td>
+                <td>
+                    <a class="btn btn-outline-light" href="{% url 'Eliminar' servicio.id %}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+
+    </table>
+</div>
+
+
+
+
+{%endblock%}
